@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdrhpdh1sm1g5"]
+
+[ext_resource type="Texture2D" uid="uid://ntwqgoxcj2rg" path="res://Used Assets/MG2.png" id="1_7v74x"]
+[ext_resource type="Script" uid="uid://bfwtvj0iu7qf3" path="res://Scripts/General Scripts/machine_gun.gd" id="1_o4fok"]
+[ext_resource type="PackedScene" uid="uid://cpxi72m2qshcv" path="res://Scenes/Projectiles/machine_bullet.tscn" id="2_k6ssj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4fok"]
+size = Vector2(134, 109)
+
+[node name="Machine_Gun" type="Area2D"]
+script = ExtResource("1_o4fok")
+bullet_scene = ExtResource("2_k6ssj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+rotation = 1.5708
+scale = Vector2(0.481915, 0.540426)
+texture = ExtResource("1_7v74x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_o4fok")
+
+[node name="Machine_Point_1" type="Marker2D" parent="."]
+position = Vector2(53, -16)
+
+[node name="Machine_Point_2" type="Marker2D" parent="."]
+position = Vector2(52, 16)

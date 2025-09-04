@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0ps00gr85wln"]
+
+[ext_resource type="Texture2D" uid="uid://cpb1b5omigcdk" path="res://Assets/PNG/Enemies/enemyBlack1.png" id="1_g61lh"]
+[ext_resource type="Script" uid="uid://cmlw4hpj23be" path="res://Scripts/General Scripts/ufo.gd" id="1_i8jxi"]
+[ext_resource type="PackedScene" uid="uid://cxgafh0sswass" path="res://Scenes/Projectiles/laser.tscn" id="2_oek0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8jxi"]
+radius = 50.448
+
+[node name="UFO" type="Area2D" groups=["Enemy"]]
+script = ExtResource("1_i8jxi")
+laser_scene = ExtResource("2_oek0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g61lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i8jxi")
+
+[node name="GunPoint" type="Marker2D" parent="."]
+position = Vector2(0, 16)

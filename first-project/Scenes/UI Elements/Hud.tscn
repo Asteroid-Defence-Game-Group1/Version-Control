@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct0md31pwm8xe"]
+
+[ext_resource type="Script" uid="uid://bn80smhxxrrkp" path="res://Scripts/General Scripts/hud.gd" id="1_gkhl3"]
+[ext_resource type="PackedScene" uid="uid://rccgw3k4r2cm" path="res://Scenes/Towers/missile_launcher.tscn" id="2_l0q0n"]
+[ext_resource type="PackedScene" uid="uid://bdrhpdh1sm1g5" path="res://Scenes/Towers/machine_gun.tscn" id="3_2og5p"]
+[ext_resource type="PackedScene" uid="uid://bmj7wby5yv8sa" path="res://Scenes/Towers/cannon.tscn" id="4_7u58j"]
+[ext_resource type="Texture2D" uid="uid://bk17uln71suw7" path="res://Used Assets/Missile.png" id="5_aru3g"]
+[ext_resource type="Texture2D" uid="uid://5m8hwv1iw26v" path="res://Used Assets/Bullet_MG.png" id="6_pmqpg"]
+[ext_resource type="Texture2D" uid="uid://p6tu8kttiqcr" path="res://Used Assets/Bullet_Cannon.png" id="7_ha8k0"]
+
+[sub_resource type="Gradient" id="Gradient_chfh5"]
+colors = PackedColorArray(0, 0.670588, 0, 1, 0, 1, 0.745098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8vcfy"]
+gradient = SubResource("Gradient_chfh5")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_gkhl3")
+missile_launcher_scene = ExtResource("2_l0q0n")
+machine_gun_scene = ExtResource("3_2og5p")
+cannon_scene = ExtResource("4_7u58j")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_top = 20.0
+offset_right = 112.0
+offset_bottom = 29.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_8vcfy")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 62.0
+offset_top = 30.0
+offset_right = 102.0
+offset_bottom = 53.0
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 65.0
+offset_bottom = 19.0
+text = "Player 1"
+
+[node name="ScoreLB" type="Label" parent="."]
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 51.0
+text = "Score :"
+
+[node name="BuildPanel" type="HBoxContainer" parent="."]
+offset_left = 163.0
+offset_top = 2.0
+offset_right = 498.0
+offset_bottom = 190.0
+
+[node name="MissileButton" type="TextureButton" parent="BuildPanel"]
+layout_mode = 2
+texture_normal = ExtResource("5_aru3g")
+texture_pressed = ExtResource("5_aru3g")
+texture_hover = ExtResource("5_aru3g")
+texture_disabled = ExtResource("5_aru3g")
+texture_focused = ExtResource("5_aru3g")
+
+[node name="MachineGunButton" type="TextureButton" parent="BuildPanel"]
+layout_mode = 2
+texture_normal = ExtResource("6_pmqpg")
+texture_pressed = ExtResource("6_pmqpg")
+texture_hover = ExtResource("6_pmqpg")
+texture_disabled = ExtResource("6_pmqpg")
+texture_focused = ExtResource("6_pmqpg")
+
+[node name="CannonButton" type="TextureButton" parent="BuildPanel"]
+layout_mode = 2
+texture_normal = ExtResource("7_ha8k0")
+texture_pressed = ExtResource("7_ha8k0")
+texture_hover = ExtResource("7_ha8k0")
+texture_disabled = ExtResource("7_ha8k0")
+texture_focused = ExtResource("7_ha8k0")

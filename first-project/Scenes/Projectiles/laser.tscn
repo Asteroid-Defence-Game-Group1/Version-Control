@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxgafh0sswass"]
+
+[ext_resource type="Script" uid="uid://sxt5yiykmkhb" path="res://Scripts/General Scripts/laser.gd" id="1_7afm0"]
+[ext_resource type="Texture2D" uid="uid://ddpewolup6d2h" path="res://Assets/PNG/Lasers/laserBlue07.png" id="2_7afm0"]
+[ext_resource type="AudioStream" uid="uid://c4yv35o7jij5k" path="res://Assets/Bonus/sfx_laser2.ogg" id="3_eetno"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mou6w"]
+radius = 9.0
+height = 64.0
+
+[node name="Laser" type="Area2D"]
+disable_mode = 2
+collision_layer = 2
+script = ExtResource("1_7afm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.625, 0.749998)
+scale = Vector2(1.63889, 1.47297)
+texture = ExtResource("2_7afm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mou6w")
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eetno")

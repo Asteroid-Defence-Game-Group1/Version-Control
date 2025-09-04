@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc17uicy0ioma"]
+
+[ext_resource type="Script" uid="uid://dmql0oubdx3sr" path="res://Scripts/Global Auto Load Scripts/Expolsion.gd" id="1_jq47b"]
+[ext_resource type="Texture2D" uid="uid://b1qvxvms287i6" path="res://Assets/PNG/Effects/star1.png" id="1_svqlg"]
+[ext_resource type="AudioStream" uid="uid://oenv6ll5a82l" path="res://Used Assets/SpaceExplosion.ogg" id="3_7fw14"]
+
+[sub_resource type="Curve" id="Curve_jq47b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.965909, 0.224719), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7fw14"]
+offsets = PackedFloat32Array(0, 0.393333, 0.746667, 1)
+colors = PackedColorArray(0.764706, 0.541176, 0.0235294, 1, 0.617358, 0.317053, 1.92523e-07, 1, 0.416855, 0.0194832, 0.0194514, 1, 1, 1, 1, 0)
+
+[node name="Expolsion" type="Node2D"]
+script = ExtResource("1_jq47b")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 60
+texture = ExtResource("1_svqlg")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+scale_amount_min = 0.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_jq47b")
+color_ramp = SubResource("Gradient_7fw14")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7fw14")

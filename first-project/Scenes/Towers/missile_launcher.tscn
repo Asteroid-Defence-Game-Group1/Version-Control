@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://rccgw3k4r2cm"]
+
+[ext_resource type="Texture2D" uid="uid://bietfja6r87xv" path="res://Used Assets/Missile_Launcher2.png" id="1_j5pxe"]
+[ext_resource type="Script" uid="uid://n05nk3er1cbu" path="res://Scripts/General Scripts/missile_launcher.gd" id="1_rhdxp"]
+[ext_resource type="PackedScene" uid="uid://deb6yrf1kl62b" path="res://Scenes/Projectiles/missile.tscn" id="2_rh73h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhdxp"]
+radius = 56.8243
+
+[node name="Missile_Launcher" type="Area2D"]
+script = ExtResource("1_rhdxp")
+missile_scene = ExtResource("2_rh73h")
+fire_rate = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+rotation = 1.5708
+scale = Vector2(0.481915, 0.540426)
+texture = ExtResource("1_j5pxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rhdxp")
+
+[node name="Projectile_Point_1" type="Marker2D" parent="."]
+position = Vector2(41, -15)
+
+[node name="Projectile_Point_2" type="Marker2D" parent="."]
+position = Vector2(37, 16)

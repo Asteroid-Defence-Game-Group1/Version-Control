@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmj7wby5yv8sa"]
+
+[ext_resource type="Texture2D" uid="uid://h628a4gpq1gl" path="res://Used Assets/Cannon.png" id="1_8g5iw"]
+[ext_resource type="Script" uid="uid://cv6d2x34hy7b7" path="res://Scripts/General Scripts/cannon.gd" id="1_a27tf"]
+[ext_resource type="PackedScene" uid="uid://bl1b23d2ih63x" path="res://Scenes/Projectiles/cannon_bullet.tscn" id="2_uplnw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a27tf"]
+size = Vector2(127, 73)
+
+[node name="Cannon" type="Area2D"]
+script = ExtResource("1_a27tf")
+cannon_bullet_scene = ExtResource("2_uplnw")
+fire_rate = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.5, -0.999976)
+rotation = 1.5708
+scale = Vector2(0.481915, 0.489043)
+texture = ExtResource("1_8g5iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -0.5)
+shape = SubResource("RectangleShape2D_a27tf")
+
+[node name="Cannon_Point_1" type="Marker2D" parent="."]
+position = Vector2(57, -2)

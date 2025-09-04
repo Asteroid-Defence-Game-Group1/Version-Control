@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2l53iuh05v7n"]
+
+[ext_resource type="Texture2D" uid="uid://d1i7h70t8gh3k" path="res://Assets/PNG/playerShip1_blue.png" id="1_2wb1r"]
+[ext_resource type="Script" uid="uid://b5njmc24muyn2" path="res://Scripts/General Scripts/FriendlyShip.gd" id="1_lt5lg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lt5lg"]
+radius = 58.0086
+
+[node name="Friendly_Ship" type="Area2D" groups=["friendly_ships"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_lt5lg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 2)
+texture = ExtResource("1_2wb1r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 10)
+shape = SubResource("CircleShape2D_lt5lg")
