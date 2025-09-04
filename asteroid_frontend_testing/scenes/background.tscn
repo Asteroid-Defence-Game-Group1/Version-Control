@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cttvj0d118ix"]
+
+[ext_resource type="Texture2D" uid="uid://c6vqx4i1tjrkm" path="res://assets/bg_1_1.png" id="1_bkp1e"]
+[ext_resource type="Texture2D" uid="uid://cja3r1vyl5qjt" path="res://assets/Pixel Planet/Frames/Pixel Earth1.png" id="2_y0upk"]
+[ext_resource type="Texture2D" uid="uid://d3ptvn0mswryq" path="res://assets/Untitled.png" id="3_jougr"]
+
+[node name="Background" type="Node2D"]
+z_index = -1
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(600, 0)
+autoscroll = Vector2(-60, 0)
+repeat_times = 5
+ignore_camera_scroll = true
+
+[node name="Space" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(1, 2.5)
+texture = ExtResource("1_bkp1e")
+
+[node name="Planet" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-1200, 0)
+scale = Vector2(3.5, 5)
+texture = ExtResource("2_y0upk")
+
+[node name="tower" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-721, -403)
+rotation = 1.31598
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_jougr")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+repeat_size = Vector2(2500, 0)
+autoscroll = Vector2(-40, 0)
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1107, -386)
+texture = ExtResource("2_y0upk")
