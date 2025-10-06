@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://b018smmj42d83"]
+
+[ext_resource type="Script" uid="uid://5ilamtyy3bni" path="res://Scripts/General Scripts/GameOverUI.gd" id="1_4rhkh"]
+[ext_resource type="Theme" uid="uid://cxj4g1d5vhtru" path="res://Used Assets/Base_Theme.tres" id="2_gq481"]
+[ext_resource type="AudioStream" uid="uid://clui6vs0cwg2k" path="res://Used Assets/Mission-Failed-We_ll-Get-Em-Next-Time-_S.ogg" id="2_jy1gy"]
+[ext_resource type="AudioStream" uid="uid://t7e3d16d7q33" path="res://Used Assets/Start_Music.ogg" id="4_c45vg"]
+[ext_resource type="AudioStream" uid="uid://cmribi0lsiuft" path="res://Used Assets/Button_Click.ogg" id="5_6mr8j"]
+[ext_resource type="AudioStream" uid="uid://cvgxu0lgtedl8" path="res://Used Assets/Game_Start_Button.ogg" id="6_ogwif"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_4rhkh")
+
+[node name="GameOver2" type="Label" parent="."]
+offset_left = 374.0
+offset_top = 79.0
+offset_right = 781.0
+offset_bottom = 129.0
+theme = ExtResource("2_gq481")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_left = 408.0
+offset_top = 204.0
+offset_right = 775.0
+offset_bottom = 461.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_gq481")
+placeholder_text = "Enter Player Name"
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_gq481")
+text = "Final Score"
+
+[node name="FinalScore" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_gq481")
+theme_override_font_sizes/font_size = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_gq481")
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_gq481")
+text = "Quit"
+
+[node name="SubmitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_gq481")
+text = "Submit Score
+"
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jy1gy")
+
+[node name="Sound_Effects" type="Node2D" parent="."]
+
+[node name="StartMusic" type="AudioStreamPlayer2D" parent="Sound_Effects"]
+stream = ExtResource("4_c45vg")
+autoplay = true
+
+[node name="Button_Pressed" type="AudioStreamPlayer2D" parent="Sound_Effects"]
+stream = ExtResource("5_6mr8j")
+
+[node name="Game_Start" type="AudioStreamPlayer2D" parent="Sound_Effects"]
+stream = ExtResource("6_ogwif")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]

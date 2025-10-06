@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://cryx3kemuqal5"]
+
+[ext_resource type="Script" uid="uid://de4ev35gl6eti" path="res://Scripts/General Scripts/Authentication.gd" id="1_j207b"]
+[ext_resource type="PackedScene" uid="uid://c02s2e23lhgw6" path="res://Scenes/UI Elements/StartMenu.tscn" id="2_cmgw5"]
+[ext_resource type="Shader" uid="uid://b5keia2y5nc4j" path="res://Shaders/BackgroundS1.gdshader" id="3_3guva"]
+[ext_resource type="Texture2D" uid="uid://bwn1h2ngpi8vh" path="res://Used Assets/Background.png" id="3_ygytt"]
+[ext_resource type="Texture2D" uid="uid://bnixedxx56l0a" path="res://Used Assets/Background_1.png" id="4_3guva"]
+[ext_resource type="Theme" uid="uid://cxj4g1d5vhtru" path="res://Used Assets/Base_Theme.tres" id="6_c3rjh"]
+[ext_resource type="FontFile" uid="uid://b8je0knygihs5" path="res://Used Assets/GravityRegular5.ttf" id="7_oaf1m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtv2k"]
+shader = ExtResource("3_3guva")
+
+[node name="Authentication" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j207b")
+startup_scene = ExtResource("2_cmgw5")
+
+[node name="AuthenBg" type="TextureRect" parent="."]
+show_behind_parent = true
+z_index = -1
+material = SubResource("ShaderMaterial_wtv2k")
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 650.0
+texture = ExtResource("3_ygytt")
+
+[node name="Spaceship2" type="TextureRect" parent="AuthenBg"]
+layout_mode = 0
+offset_left = 61.0
+offset_right = 541.0
+offset_bottom = 321.0
+texture = ExtResource("4_3guva")
+stretch_mode = 1
+flip_h = true
+
+[node name="Spaceship" type="TextureRect" parent="AuthenBg"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 308.0
+offset_right = 1074.0
+offset_bottom = 629.0
+texture = ExtResource("4_3guva")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -81.5
+offset_right = 54.0
+offset_bottom = 81.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 0.5)
+theme = ExtResource("6_c3rjh")
+
+[node name="StateLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Not Logged In"
+
+[node name="EmailLineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_oaf1m")
+placeholder_text = "Email"
+
+[node name="PasswordLineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_oaf1m")
+placeholder_text = "Password"
+secret = true
+
+[node name="LogInButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_oaf1m")
+text = "Log In "
+
+[node name="SignUpButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_oaf1m")
+text = "Sign Up"
+
+[node name="LB" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/LogInButton" to="." method="_on_log_in_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SignUpButton" to="." method="_on_sign_up_button_pressed"]

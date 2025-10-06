@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qv51o2w6m0gj"
+path="res://.godot/imported/calming-rain-257596.ogg-1de33480b81362e7c3b7294c4bbf382c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Used Assets/calming-rain-257596.ogg"
+dest_files=["res://.godot/imported/calming-rain-257596.ogg-1de33480b81362e7c3b7294c4bbf382c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

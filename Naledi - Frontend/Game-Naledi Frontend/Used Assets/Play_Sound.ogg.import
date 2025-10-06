@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cebamtsjgcb6n"
+path="res://.godot/imported/Play_Sound.ogg-d5b47289ad3ef61e38767cab91394308.oggvorbisstr"
+
+[deps]
+
+source_file="res://Used Assets/Play_Sound.ogg"
+dest_files=["res://.godot/imported/Play_Sound.ogg-d5b47289ad3ef61e38767cab91394308.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

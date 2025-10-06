@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0ps00gr85wln"]
+
+[ext_resource type="Script" uid="uid://cmlw4hpj23be" path="res://Scripts/General Scripts/ufo.gd" id="1_i8jxi"]
+[ext_resource type="PackedScene" uid="uid://dxs3x0h7vsu1f" path="res://Scenes/Projectiles/Enemy_laser.tscn" id="2_r58fx"]
+[ext_resource type="Texture2D" uid="uid://c878kh8xb3ocy" path="res://Used Assets/KennySpace/PNG/Sprites/Ships/spaceShips_004.png" id="3_r58fx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8jxi"]
+radius = 73.1095
+
+[sub_resource type="Curve" id="Curve_r58fx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.404494), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_tc3xh"]
+offsets = PackedFloat32Array(0, 0.2, 0.44, 1)
+colors = PackedColorArray(0.968627, 0.192157, 0.0980392, 1, 0.972549, 0.27451, 0, 1, 0.976471, 0.643137, 0.0196078, 1, 1, 1, 1, 0)
+
+[node name="UFO" type="Area2D" groups=["Enemy"]]
+rotation = 1.5708
+script = ExtResource("1_i8jxi")
+speed = 150.0
+laser_scene = ExtResource("2_r58fx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_r58fx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i8jxi")
+
+[node name="GunPoint" type="Marker2D" parent="."]
+position = Vector2(0, 21)
+
+[node name="Thruster_Flame" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+position = Vector2(-37, -53)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_r58fx")
+color_ramp = SubResource("Gradient_tc3xh")
+
+[node name="Thruster_Flame2" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+position = Vector2(37, -53)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_r58fx")
+color_ramp = SubResource("Gradient_tc3xh")

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://uhxipkc4v00j"]
+
+[ext_resource type="Script" uid="uid://cmlw4hpj23be" path="res://Scripts/General Scripts/ufo.gd" id="1_x8elh"]
+[ext_resource type="PackedScene" uid="uid://dxs3x0h7vsu1f" path="res://Scenes/Projectiles/Enemy_laser.tscn" id="2_x8elh"]
+[ext_resource type="Texture2D" uid="uid://b363v4545d2aq" path="res://Used Assets/Assets/PNG/Enemies/enemyBlack4.png" id="3_7jvi8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_osbcc"]
+radius = 54.0
+height = 148.0
+
+[sub_resource type="Curve" id="Curve_x8elh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.404494), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_n3kjd"]
+offsets = PackedFloat32Array(0, 0.2, 0.44, 1)
+colors = PackedColorArray(0.968627, 0.192157, 0.0980392, 1, 0.972549, 0.27451, 0, 1, 0.976471, 0.643137, 0.0196078, 1, 1, 1, 1, 0)
+
+[node name="UFO_V3" type="Area2D" groups=["Enemy"]]
+rotation = 1.5708
+script = ExtResource("1_x8elh")
+speed = 100.0
+laser_scene = ExtResource("2_x8elh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1.14634, 1.52381)
+texture = ExtResource("3_7jvi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_osbcc")
+
+[node name="GunPoint" type="Marker2D" parent="."]
+position = Vector2(-1, 58)
+
+[node name="Thruster_Flame" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+position = Vector2(-1, -55)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_x8elh")
+color_ramp = SubResource("Gradient_n3kjd")

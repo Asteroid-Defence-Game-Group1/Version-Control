@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmj7wby5yv8sa"]
+
+[ext_resource type="Script" uid="uid://cv6d2x34hy7b7" path="res://Scripts/General Scripts/cannon.gd" id="1_a27tf"]
+[ext_resource type="PackedScene" uid="uid://bl1b23d2ih63x" path="res://Scenes/Projectiles/cannon_bullet.tscn" id="2_uplnw"]
+[ext_resource type="Texture2D" uid="uid://dkgpx7jgljv0v" path="res://Used Assets/KennySpace/PNG/Sprites/Ships/spaceShips_006.png" id="3_uplnw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjlxm"]
+radius = 37.0
+height = 108.0
+
+[sub_resource type="Curve" id="Curve_uplnw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.404494), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mjlxm"]
+offsets = PackedFloat32Array(0, 0.2, 0.44, 1)
+colors = PackedColorArray(0.968627, 0.192157, 0.0980392, 1, 0.972549, 0.27451, 0, 1, 0.976471, 0.643137, 0.0196078, 1, 1, 1, 1, 0)
+
+[node name="Cannon" type="Area2D" groups=["Towers"]]
+script = ExtResource("1_a27tf")
+cannon_bullet_scene = ExtResource("2_uplnw")
+fire_rate = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -9.53674e-07)
+rotation = 1.5708
+scale = Vector2(0.744945, 0.615127)
+texture = ExtResource("3_uplnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mjlxm")
+
+[node name="Cannon_Point_1" type="Marker2D" parent="."]
+position = Vector2(40, 0)
+
+[node name="Thruster_Flame" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+position = Vector2(-30, 1)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(-980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_uplnw")
+color_ramp = SubResource("Gradient_mjlxm")

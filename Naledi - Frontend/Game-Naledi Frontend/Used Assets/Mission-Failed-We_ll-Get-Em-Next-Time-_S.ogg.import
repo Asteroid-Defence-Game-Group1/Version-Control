@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clui6vs0cwg2k"
+path="res://.godot/imported/Mission-Failed-We_ll-Get-Em-Next-Time-_S.ogg-386679bbaa4923ab19d1b1f85544f21b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Used Assets/Mission-Failed-We_ll-Get-Em-Next-Time-_S.ogg"
+dest_files=["res://.godot/imported/Mission-Failed-We_ll-Get-Em-Next-Time-_S.ogg-386679bbaa4923ab19d1b1f85544f21b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

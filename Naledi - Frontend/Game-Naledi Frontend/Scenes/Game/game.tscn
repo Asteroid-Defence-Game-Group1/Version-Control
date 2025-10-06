@@ -1,0 +1,271 @@
+[gd_scene load_steps=42 format=3 uid="uid://dogqm3tc43mna"]
+
+[ext_resource type="PackedScene" uid="uid://bi5yv5qfdxdbd" path="res://Scenes/Ships/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://c0eudx2hb4i1p" path="res://Scripts/General Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://vqutcv8ewi6l" path="res://Scenes/Asteroids/Asteroid.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://b0ps00gr85wln" path="res://Scenes/Ships/UFO.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://ct0md31pwm8xe" path="res://Scenes/UI Elements/Hud.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://c2l53iuh05v7n" path="res://Scenes/Ships/FriendlyShip.tscn" id="5_i6g32"]
+[ext_resource type="Shader" uid="uid://b5keia2y5nc4j" path="res://Shaders/BackgroundS1.gdshader" id="6_8e3kh"]
+[ext_resource type="PackedScene" uid="uid://bx4p0gch8bjpi" path="res://Scenes/UI Elements/PauseMenu.tscn" id="6_xfil1"]
+[ext_resource type="Texture2D" uid="uid://bwn1h2ngpi8vh" path="res://Used Assets/Background.png" id="7_56qi8"]
+[ext_resource type="Script" uid="uid://dceogdngojq38" path="res://Scripts/Global Auto Load Scripts/WaveManager.gd" id="9_7jvlm"]
+[ext_resource type="AudioStream" uid="uid://l1514wsam84h" path="res://Used Assets/Space Music.ogg" id="9_huoen"]
+[ext_resource type="Texture2D" uid="uid://cxhmmpuqkc0od" path="res://Used Assets/Placement.png" id="11_qtymf"]
+[ext_resource type="Script" uid="uid://bbxrd5lg131b2" path="res://Scripts/General Scripts/Placement_spot_1.gd" id="11_ypmwd"]
+[ext_resource type="Script" uid="uid://t4sg8ysik4ba" path="res://Scripts/Global Auto Load Scripts/AsteroidManager.gd" id="12_nxex1"]
+[ext_resource type="PackedScene" uid="uid://d0atf4jbriqsu" path="res://Scenes/Ships/Ufo_v_2.tscn" id="12_pmm7v"]
+[ext_resource type="PackedScene" uid="uid://bld235m7jw3cl" path="res://Scenes/Asteroids/Asteroid_v_2.tscn" id="13_2lc0x"]
+[ext_resource type="PackedScene" uid="uid://uhxipkc4v00j" path="res://Scenes/Ships/Ufo_v_3.tscn" id="13_3gqeb"]
+[ext_resource type="Script" uid="uid://btq0x7n05l0ne" path="res://Scripts/General Scripts/Placement_spot_2.gd" id="13_oejk7"]
+[ext_resource type="PackedScene" uid="uid://dosnoxprfvsyy" path="res://Scenes/Asteroids/Asteroid_v_3.tscn" id="14_4ti5a"]
+[ext_resource type="Script" uid="uid://cqwnlrxtm88ov" path="res://Scripts/General Scripts/Placement_spot_3.gd" id="14_upfqs"]
+[ext_resource type="Texture2D" uid="uid://bw4keilixm643" path="res://Used Assets/ResourcePlacement.png" id="16_2vowc"]
+[ext_resource type="Texture2D" uid="uid://b22g0awmfnnq2" path="res://Used Assets/Pixel Planet/Frames/Pixel Earth1.png" id="16_56qi8"]
+[ext_resource type="Script" uid="uid://d3fyn2n464t3r" path="res://Scripts/General Scripts/Resource_PL_1.gd" id="16_a6ftd"]
+[ext_resource type="Script" uid="uid://cc4k1054488ve" path="res://Scripts/General Scripts/Resource_PL_2.gd" id="17_lemb1"]
+[ext_resource type="Script" uid="uid://dpsvd616ons6" path="res://Scripts/General Scripts/Resource_PL_3.gd" id="17_yox4t"]
+[ext_resource type="Script" uid="uid://csmlg0cj673eg" path="res://Scripts/General Scripts/Placement_spot_4.gd" id="21_3gqeb"]
+[ext_resource type="Script" uid="uid://bs8mmkkxr4s1e" path="res://Scripts/Network Scripts/high_level_player_spawner.gd" id="27_7pdpw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ebmjs"]
+normal = Vector2(0.999993, -0.0037914)
+distance = -138.448
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+normal = Vector2(-0.999977, 0.0067566)
+distance = -117.963
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wrm1d"]
+normal = Vector2(0, 1.835)
+distance = -84.04
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
+normal = Vector2(0.00934539, -0.999956)
+distance = -314.033
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vowc"]
+shader = ExtResource("6_8e3kh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypmwd"]
+size = Vector2(247.5, 225.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oejk7"]
+size = Vector2(246, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upfqs"]
+size = Vector2(240, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmm7v"]
+size = Vector2(250, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yox4t"]
+size = Vector2(213, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lemb1"]
+size = Vector2(219, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vowc"]
+size = Vector2(213, 191)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7pdpw"]
+radius = 165.436
+
+[node name="Game" type="Node2D"]
+process_mode = 1
+position = Vector2(2, 0)
+script = ExtResource("1_qxrlw")
+asteroid_scene = ExtResource("2_wrm1d")
+hud_scene = ExtResource("4_wowpa")
+friendly_scene = ExtResource("5_i6g32")
+
+[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+position = Vector2(-3, 23)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.45, 0.45)
+
+[node name="WorldCollisions" type="Area2D" parent="."]
+position = Vector2(-5, 20)
+
+[node name="OuterBound_Left" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(-1130, 6)
+shape = SubResource("WorldBoundaryShape2D_ebmjs")
+
+[node name="OuterBound_Right" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(1150, 6)
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="OuterBound_Top" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(0, -570)
+shape = SubResource("WorldBoundaryShape2D_wrm1d")
+
+[node name="OuterBound_Bottom" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(6, 385)
+shape = SubResource("WorldBoundaryShape2D_3dryh")
+
+[node name="Midway_Point" type="CollisionShape2D" parent="WorldCollisions"]
+position = Vector2(400, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_1l0tm")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2vowc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1294.0
+offset_top = -713.0
+offset_right = 1279.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_56qi8")
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_xfil1")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_huoen")
+volume_db = -20.0
+
+[node name="WaveManager" type="Node2D" parent="."]
+script = ExtResource("9_7jvlm")
+ufo_scenes = Array[PackedScene]([ExtResource("3_3dryh"), ExtResource("12_pmm7v"), ExtResource("13_3gqeb")])
+spawn_interval = 3.0
+
+[node name="AsteroidManager" type="Node2D" parent="."]
+script = ExtResource("12_nxex1")
+spawn_interval = 2.0
+asteroid_scenes = Array[PackedScene]([ExtResource("2_wrm1d"), ExtResource("13_2lc0x"), ExtResource("14_4ti5a")])
+
+[node name="PlacementSpots" type="Node2D" parent="."]
+
+[node name="Placement_Spot1" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-450, 463)
+disable_mode = 2
+script = ExtResource("11_ypmwd")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Placement_Spot1"]
+visible = false
+position = Vector2(-1.90735e-06, -1.04904e-05)
+scale = Vector2(3.75781, 3.60547)
+texture = ExtResource("11_qtymf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Placement_Spot1"]
+position = Vector2(6.75, -3.875)
+shape = SubResource("RectangleShape2D_ypmwd")
+
+[node name="Placement_Spot2" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-450, 141)
+disable_mode = 2
+script = ExtResource("13_oejk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Placement_Spot2"]
+visible = false
+position = Vector2(1.14441e-05, -6.67572e-06)
+scale = Vector2(4.28125, 3.78125)
+texture = ExtResource("11_qtymf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Placement_Spot2"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_oejk7")
+
+[node name="Placement_Spot3" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-450, -188)
+disable_mode = 2
+script = ExtResource("14_upfqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Placement_Spot3"]
+visible = false
+position = Vector2(-1.43051e-05, 1.90735e-06)
+scale = Vector2(3.75, 3.54688)
+texture = ExtResource("11_qtymf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Placement_Spot3"]
+shape = SubResource("RectangleShape2D_upfqs")
+
+[node name="Placement_Spot4" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-450, -490)
+script = ExtResource("21_3gqeb")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Placement_Spot4"]
+visible = false
+position = Vector2(-1.90735e-06, 9.53674e-07)
+scale = Vector2(4.08594, 3.77734)
+texture = ExtResource("11_qtymf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Placement_Spot4"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_pmm7v")
+
+[node name="Resource_PL1" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-750, 0)
+disable_mode = 2
+script = ExtResource("16_a6ftd")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Resource_PL1"]
+visible = false
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(1.09563, 1.19753)
+texture = ExtResource("16_2vowc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Resource_PL1"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_yox4t")
+
+[node name="Resource_PL2" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-750, 268)
+disable_mode = 2
+script = ExtResource("17_lemb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Resource_PL2"]
+visible = false
+position = Vector2(2.47955e-05, -1.14441e-05)
+scale = Vector2(1.16667, 1.15432)
+texture = ExtResource("16_2vowc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Resource_PL2"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_lemb1")
+
+[node name="Resource_PL3" type="Area2D" parent="PlacementSpots" groups=["PlacementSpot"]]
+position = Vector2(-750, -239)
+disable_mode = 2
+script = ExtResource("17_yox4t")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementSpots/Resource_PL3"]
+visible = false
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(1.13661, 1.16049)
+texture = ExtResource("16_2vowc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementSpots/Resource_PL3"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2vowc")
+
+[node name="Planet" type="Area2D" parent="." groups=["Towers"]]
+position = Vector2(-1400, 0)
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet"]
+position = Vector2(-3.05176e-05, 3.67342e-40)
+texture = ExtResource("16_56qi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet"]
+shape = SubResource("CircleShape2D_7pdpw")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://bi5yv5qfdxdbd")
+spawn_path = NodePath("..")
+script = ExtResource("27_7pdpw")
+player_scene = ExtResource("1_ebmjs")

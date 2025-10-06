@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc17uicy0ioma"]
+
+[ext_resource type="Script" uid="uid://dmql0oubdx3sr" path="res://Scripts/Global Auto Load Scripts/Expolsion.gd" id="1_jq47b"]
+[ext_resource type="AudioStream" uid="uid://oenv6ll5a82l" path="res://Used Assets/SpaceExplosion.ogg" id="3_7fw14"]
+[ext_resource type="Texture2D" uid="uid://db7oljpwyje2c" path="res://Used Assets/Explosion_Sheet.png" id="3_egwwl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5ahgv"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_gpufk"]
+offsets = PackedFloat32Array(0, 0.3, 0.333333, 0.493333, 0.526667, 0.766667, 0.813333, 1)
+colors = PackedColorArray(1, 0.917647, 0, 1, 1, 0.917647, 0, 1, 1, 0.627451, 0.180392, 1, 1, 0.635294, 0.054902, 1, 1, 0.215686, 0.133333, 1, 1, 0.215686, 0.133333, 1, 0.168627, 0.168627, 0.168627, 1, 0.168627, 0.168627, 0.168627, 1)
+
+[node name="Expolsion" type="Node2D"]
+position = Vector2(585, 288)
+script = ExtResource("1_jq47b")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_5ahgv")
+position = Vector2(-5, 2)
+emitting = false
+amount = 25
+texture = ExtResource("3_egwwl")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.45
+lifetime_randomness = 0.1
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, -100)
+angle_min = 720.0
+angle_max = 720.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_gpufk")
+anim_speed_min = 0.1
+anim_speed_max = 0.5
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-5, 3)
+stream = ExtResource("3_7fw14")

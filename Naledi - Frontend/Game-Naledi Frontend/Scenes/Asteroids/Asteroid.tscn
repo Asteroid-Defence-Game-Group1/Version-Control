@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://vqutcv8ewi6l"]
+
+[ext_resource type="Texture2D" uid="uid://c5h8o2fb5cfgv" path="res://Used Assets/Assets/PNG/Meteors/meteorGrey_big3.png" id="1_e0e3k"]
+[ext_resource type="Script" uid="uid://cu5jaheb137t7" path="res://Scripts/General Scripts/asteroid.gd" id="1_jnrf0"]
+[ext_resource type="PackedScene" uid="uid://da2gbs7h8l8wm" path="res://Scenes/Asteroids/SmallAsteroid.tscn" id="2_8e40r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jnrf0"]
+radius = 70.0071
+
+[node name="Asteroid" type="Area2D" groups=["Big_Asteroids", "asteroid"]]
+disable_mode = 2
+collision_mask = 2
+script = ExtResource("1_jnrf0")
+small_asteroid_scene = ExtResource("2_8e40r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(1.41011, 1.46342)
+texture = ExtResource("1_e0e3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_jnrf0")

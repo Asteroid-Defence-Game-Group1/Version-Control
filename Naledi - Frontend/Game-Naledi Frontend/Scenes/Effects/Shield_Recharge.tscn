@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf6wbsyi2uje4"]
+
+[ext_resource type="Texture2D" uid="uid://cdrjwjqcvi16r" path="res://Used Assets/Implosion_Effect.png" id="1_8mscw"]
+[ext_resource type="Script" uid="uid://clblp10cy6k3h" path="res://Scripts/Global Auto Load Scripts/Shield_Recharge.gd" id="1_ltf35"]
+[ext_resource type="AudioStream" uid="uid://6n3r87yj46hq" path="res://Used Assets/Shield_Recharge.ogg" id="2_ltf35"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ea2vu"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_f3p35"]
+offsets = PackedFloat32Array(0, 0.266667, 0.493333, 0.706667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 2.69532e-06, 0.430346, 0.399205, 1, 1.97336e-06, 0.484685, 0.565536, 1, 1.34766e-06, 0.403586, 0.532411, 1, 1, 1, 1, 0)
+
+[node name="Shield_Recharge" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_ltf35")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ea2vu")
+amount = 60
+texture = ExtResource("1_8mscw")
+emission_shape = 1
+emission_sphere_radius = 128.0
+particle_flag_align_y = true
+gravity = Vector2(0, 0)
+radial_accel_min = -200.0
+radial_accel_max = -200.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_f3p35")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+anim_offset_max = 1.0
+
+[node name="Shield_Regen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ltf35")

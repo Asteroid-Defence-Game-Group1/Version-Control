@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn2ldfu38xjf6"]
+
+[ext_resource type="Script" uid="uid://ci4gs5y3xvtmy" path="res://Scripts/General Scripts/Enemy_laser.gd" id="1_0ph2p"]
+[ext_resource type="Texture2D" uid="uid://bm7y6meaak7jb" path="res://Used Assets/Assets/PNG/Lasers/laserGreen13.png" id="1_rophy"]
+[ext_resource type="Script" uid="uid://0xy0dc5c0r8g" path="res://Scripts/General Scripts/Trail_line_Laser.gd" id="2_0ph2p"]
+[ext_resource type="AudioStream" uid="uid://c4yv35o7jij5k" path="res://Used Assets/Assets/Bonus/sfx_laser2.ogg" id="3_2jit1"]
+
+[sub_resource type="Curve" id="Curve_1jwp1"]
+_data = [Vector2(0.00531916, 0.011236), 0.0, 0.0, 0, 0, Vector2(0.994681, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_b6md2"]
+offsets = PackedFloat32Array(0, 0.433333, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.158276, 0.331562, 0.031981, 1, 0.282353, 0.768627, 0.262745, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebppo"]
+height = 90.0
+
+[node name="Enemy_Laser_V2" type="Area2D" groups=["Enemy_Projectiles"]]
+disable_mode = 2
+collision_layer = 2
+script = ExtResource("1_0ph2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+scale = Vector2(1.981, 2.23577)
+texture = ExtResource("1_rophy")
+
+[node name="Trail_Line" type="Line2D" parent="Sprite2D" groups=["Enemy_Projectiles"]]
+top_level = true
+width_curve = SubResource("Curve_1jwp1")
+gradient = SubResource("Gradient_b6md2")
+script = ExtResource("2_0ph2p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("CapsuleShape2D_ebppo")
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2jit1")

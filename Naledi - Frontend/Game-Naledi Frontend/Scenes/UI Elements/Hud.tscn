@@ -1,0 +1,300 @@
+[gd_scene load_steps=35 format=3 uid="uid://ct0md31pwm8xe"]
+
+[ext_resource type="Script" uid="uid://bn80smhxxrrkp" path="res://Scripts/General Scripts/hud.gd" id="1_gkhl3"]
+[ext_resource type="PackedScene" uid="uid://rccgw3k4r2cm" path="res://Scenes/Towers/missile_launcher.tscn" id="2_l0q0n"]
+[ext_resource type="PackedScene" uid="uid://bdrhpdh1sm1g5" path="res://Scenes/Towers/machine_gun.tscn" id="3_2og5p"]
+[ext_resource type="PackedScene" uid="uid://bmj7wby5yv8sa" path="res://Scenes/Towers/cannon.tscn" id="4_7u58j"]
+[ext_resource type="Texture2D" uid="uid://cshhs5a0s3yde" path="res://Used Assets/KennySpace/PNG/Sprites/Missiles/spaceMissiles_006.png" id="5_l0q0n"]
+[ext_resource type="PackedScene" uid="uid://drrihr51qqkvx" path="res://Scenes/Towers/Resource_Collector.tscn" id="5_pmqpg"]
+[ext_resource type="PackedScene" uid="uid://ccniuxtc1f7uk" path="res://Scenes/Towers/Shield_Generator.tscn" id="6_ha8k0"]
+[ext_resource type="Texture2D" uid="uid://5m8hwv1iw26v" path="res://Used Assets/Bullet_MG.png" id="6_pmqpg"]
+[ext_resource type="PackedScene" uid="uid://b6uss5c11w8ow" path="res://Scenes/Towers/Upgrade_Station.tscn" id="7_d5td3"]
+[ext_resource type="Texture2D" uid="uid://p6tu8kttiqcr" path="res://Used Assets/Bullet_Cannon.png" id="7_ha8k0"]
+[ext_resource type="PackedScene" uid="uid://cylacoxsitawu" path="res://Scenes/Towers/Defense_Station.tscn" id="8_667nv"]
+[ext_resource type="Texture2D" uid="uid://cyxuooadowj0r" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs/Shop_BTN.png" id="9_j2h31"]
+[ext_resource type="Script" uid="uid://bqcvnsre8hvi1" path="res://Scripts/General Scripts/Pause_Menu.gd" id="9_kqoh5"]
+[ext_resource type="Texture2D" uid="uid://kgq2a1idagew" path="res://Used Assets/Space Shooter Assets/PNG/Level_Menu/Table.png" id="9_w37dw"]
+[ext_resource type="Texture2D" uid="uid://diym0obybno0b" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs_Active/Shop_BTN.png" id="10_f48d5"]
+[ext_resource type="Texture2D" uid="uid://677kosehmut1" path="res://Used Assets/Space Shooter Assets/PNG/Pause/Window.png" id="10_ke8mx"]
+[ext_resource type="Texture2D" uid="uid://dxw3txap4gehc" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs/Upgrade_BTN.png" id="11_4cq82"]
+[ext_resource type="Texture2D" uid="uid://bkc8ku2orwwk4" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs/Pause_BTN.png" id="12_4cq82"]
+[ext_resource type="FontFile" uid="uid://d6jhecc8xjh1" path="res://Used Assets/GravityBold8.ttf" id="12_wi7iy"]
+[ext_resource type="Texture2D" uid="uid://b3t5pbgg8bda7" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs_Active/Upgrade_BTN.png" id="12_xix2s"]
+[ext_resource type="Texture2D" uid="uid://degxm6863pyym" path="res://Used Assets/Main_Base_Hud.png" id="13_ha8k0"]
+[ext_resource type="Texture2D" uid="uid://bf5urdek4xdpl" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs_Active/Pause_BTN.png" id="13_xix2s"]
+[ext_resource type="Texture2D" uid="uid://ceptql4o743tc" path="res://Used Assets/Shield_Gen_Hud.png" id="14_3qsos"]
+[ext_resource type="Texture2D" uid="uid://dv0gwuqnbf6ts" path="res://Used Assets/Upgrade_St_Hud.png" id="15_x78u6"]
+[ext_resource type="Texture2D" uid="uid://hxljjqwkcno5" path="res://Used Assets/Defence_St_Hud.png" id="16_0jnhi"]
+[ext_resource type="Theme" uid="uid://cxj4g1d5vhtru" path="res://Used Assets/Base_Theme.tres" id="24_p0ihy"]
+[ext_resource type="AudioStream" uid="uid://t7e3d16d7q33" path="res://Used Assets/Start_Music.ogg" id="25_wfjbp"]
+[ext_resource type="AudioStream" uid="uid://cmribi0lsiuft" path="res://Used Assets/Button_Click.ogg" id="26_e8fm8"]
+[ext_resource type="AudioStream" uid="uid://cvgxu0lgtedl8" path="res://Used Assets/Game_Start_Button.ogg" id="27_yym0q"]
+[ext_resource type="Texture2D" uid="uid://d27dwrnt7rl6t" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs/Backward_BTN.png" id="29_5x5mk"]
+[ext_resource type="Texture2D" uid="uid://ocowga866k6v" path="res://Used Assets/Space Shooter Assets/PNG/Buttons/BTNs_Active/Backward_BTN.png" id="30_kqoh5"]
+
+[sub_resource type="PackedScene" id="PackedScene_mqosf"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("PauseMenu", "process_mode", "layout_mode", "anchors_preset", "script", "Control", "PanelContainer", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "Panel", "TextureRect", "z_index", "mouse_filter", "texture", "VBoxContainer", "anchor_left", "anchor_top", "offset_left", "offset_top", "offset_right", "offset_bottom", "Resume", "theme", "theme_override_font_sizes/font_size", "text", "Button", "Save", "Quit", "Sound_Effects", "position", "Node2D", "StartMusic", "stream", "autoplay", "AudioStreamPlayer2D", "Button_Pressed", "Game_Start"),
+"node_count": 11,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 4, 1, 0, 2, 0, 3, 1, 4, 2, 0, 0, 0, 11, 6, -1, 6, 2, 3, 3, 4, 7, 5, 8, 5, 9, 6, 10, 6, 0, 1, 0, 12, 12, -1, 9, 13, 7, 2, 3, 3, 4, 7, 5, 8, 5, 9, 6, 10, 6, 14, 6, 15, 8, 0, 1, 0, 16, 16, -1, 12, 2, 3, 3, 9, 17, 10, 18, 10, 7, 10, 8, 10, 19, 11, 20, 12, 21, 13, 22, 14, 9, 6, 10, 6, 0, 3, 0, 27, 23, -1, 4, 2, 6, 24, 15, 25, 16, 26, 17, 0, 3, 0, 27, 28, -1, 4, 2, 6, 24, 15, 25, 16, 26, 18, 0, 3, 0, 27, 29, -1, 4, 2, 6, 24, 15, 25, 16, 26, 19, 0, 0, 0, 32, 30, -1, 1, 31, 20, 0, 7, 0, 36, 33, -1, 2, 34, 21, 35, 22, 0, 7, 0, 36, 37, -1, 1, 34, 23, 0, 7, 0, 36, 38, -1, 1, 34, 24, 0),
+"variants": [3, 0, ExtResource("9_kqoh5"), 1, 15, 1.0, 2, -1, ExtResource("10_ke8mx"), 8, 0.5, -48.0, -40.0, 48.0, 40.0, ExtResource("24_p0ihy"), 40, "Resume", "Save", "Quit", Vector2(-187, -1148), ExtResource("25_wfjbp"), true, ExtResource("26_e8fm8"), ExtResource("27_yym0q")],
+"version": 3
+}
+
+[sub_resource type="Gradient" id="Gradient_chfh5"]
+colors = PackedColorArray(0, 0.670588, 0, 1, 0, 1, 0.745098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8vcfy"]
+gradient = SubResource("Gradient_chfh5")
+
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource("1_gkhl3")
+missile_launcher_scene = ExtResource("2_l0q0n")
+machine_gun_scene = ExtResource("3_2og5p")
+cannon_scene = ExtResource("4_7u58j")
+main_base_scene = ExtResource("5_pmqpg")
+shield_gen_scene = ExtResource("6_ha8k0")
+upgrade_st_scene = ExtResource("7_d5td3")
+defence_st_scence = ExtResource("8_667nv")
+pause_menu = SubResource("PackedScene_mqosf")
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 5.0
+offset_right = 309.0
+offset_bottom = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_w37dw")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = 31.0
+offset_top = 28.0
+offset_right = 162.0
+offset_bottom = 45.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_8vcfy")
+tint_progress = Color(0.741385, 0.741385, 0.741385, 1)
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 13.0
+offset_right = 159.0
+offset_bottom = 29.0
+theme = ExtResource("24_p0ihy")
+theme_override_font_sizes/font_size = 10
+text = "Player 1"
+
+[node name="BackButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 250.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 52.0
+texture_normal = ExtResource("29_5x5mk")
+texture_pressed = ExtResource("30_kqoh5")
+texture_hover = ExtResource("29_5x5mk")
+texture_disabled = ExtResource("29_5x5mk")
+texture_focused = ExtResource("29_5x5mk")
+
+[node name="Defence_Container" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.489
+anchor_top = 0.306
+anchor_right = 0.489
+anchor_bottom = 0.306
+offset_left = -217.24
+offset_top = -198.9
+offset_right = -85.2401
+offset_bottom = -94.9
+grow_horizontal = 2
+alignment = 1
+
+[node name="Defence_Structures" type="Label" parent="Defence_Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_wi7iy")
+theme_override_font_sizes/font_size = 12
+text = "Defence 
+Structures"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildPanel" type="HBoxContainer" parent="Defence_Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Defence_Container/BuildPanel"]
+layout_mode = 2
+
+[node name="CannonButton" type="TextureButton" parent="Defence_Container/BuildPanel/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_ha8k0")
+texture_pressed = ExtResource("7_ha8k0")
+texture_hover = ExtResource("7_ha8k0")
+texture_disabled = ExtResource("7_ha8k0")
+texture_focused = ExtResource("7_ha8k0")
+
+[node name="MachineGunButton" type="TextureButton" parent="Defence_Container/BuildPanel/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_pmqpg")
+texture_pressed = ExtResource("6_pmqpg")
+texture_hover = ExtResource("6_pmqpg")
+texture_disabled = ExtResource("6_pmqpg")
+texture_focused = ExtResource("6_pmqpg")
+
+[node name="MissileButton" type="TextureButton" parent="Defence_Container/BuildPanel/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_l0q0n")
+texture_pressed = ExtResource("5_l0q0n")
+texture_hover = ExtResource("5_l0q0n")
+texture_disabled = ExtResource("5_l0q0n")
+texture_focused = ExtResource("5_l0q0n")
+
+[node name="Resource_Container" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.453
+anchor_right = 0.453
+offset_left = -25.48
+offset_right = 196.52
+offset_bottom = 91.0
+grow_horizontal = 2
+
+[node name="Resource_Structures" type="Label" parent="Resource_Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_wi7iy")
+theme_override_font_sizes/font_size = 12
+text = "Resource 
+Structure"
+horizontal_alignment = 1
+
+[node name="BuildPanel2" type="HBoxContainer" parent="Resource_Container"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Resource_Container/BuildPanel2"]
+layout_mode = 2
+
+[node name="Main_Base_Button" type="TextureButton" parent="Resource_Container/BuildPanel2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("13_ha8k0")
+texture_pressed = ExtResource("13_ha8k0")
+texture_hover = ExtResource("13_ha8k0")
+texture_disabled = ExtResource("13_ha8k0")
+texture_focused = ExtResource("13_ha8k0")
+
+[node name="Shield_Gen_Button" type="TextureButton" parent="Resource_Container/BuildPanel2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("14_3qsos")
+texture_pressed = ExtResource("14_3qsos")
+texture_hover = ExtResource("14_3qsos")
+texture_disabled = ExtResource("14_3qsos")
+texture_focused = ExtResource("14_3qsos")
+
+[node name="Upgrade_St_Button" type="TextureButton" parent="Resource_Container/BuildPanel2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_x78u6")
+texture_pressed = ExtResource("15_x78u6")
+texture_hover = ExtResource("15_x78u6")
+texture_disabled = ExtResource("15_x78u6")
+texture_focused = ExtResource("15_x78u6")
+
+[node name="Defence_St_button" type="TextureButton" parent="Resource_Container/BuildPanel2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_0jnhi")
+texture_pressed = ExtResource("16_0jnhi")
+texture_hover = ExtResource("16_0jnhi")
+texture_disabled = ExtResource("16_0jnhi")
+texture_focused = ExtResource("16_0jnhi")
+
+[node name="Button_Container" type="HBoxContainer" parent="."]
+offset_left = 162.0
+offset_top = 18.0
+offset_right = 300.0
+offset_bottom = 63.0
+alignment = 1
+
+[node name="Shop_Button" type="TextureButton" parent="Button_Container"]
+layout_mode = 2
+texture_normal = ExtResource("9_j2h31")
+texture_pressed = ExtResource("10_f48d5")
+texture_hover = ExtResource("9_j2h31")
+texture_disabled = ExtResource("9_j2h31")
+texture_focused = ExtResource("9_j2h31")
+
+[node name="Save_Button" type="TextureButton" parent="Button_Container"]
+layout_mode = 2
+texture_normal = ExtResource("11_4cq82")
+texture_pressed = ExtResource("12_xix2s")
+texture_hover = ExtResource("11_4cq82")
+texture_disabled = ExtResource("11_4cq82")
+texture_focused = ExtResource("11_4cq82")
+
+[node name="Pause_Button" type="TextureButton" parent="Button_Container"]
+layout_mode = 2
+texture_normal = ExtResource("12_4cq82")
+texture_pressed = ExtResource("13_xix2s")
+texture_hover = ExtResource("12_4cq82")
+texture_disabled = ExtResource("12_4cq82")
+texture_focused = ExtResource("12_4cq82")
+
+[node name="ResourceCountContainer" type="HBoxContainer" parent="."]
+offset_left = 31.0
+offset_top = 45.0
+offset_right = 163.0
+offset_bottom = 67.0
+
+[node name="ResourceLB" type="Label" parent="ResourceCountContainer"]
+layout_mode = 2
+theme = ExtResource("24_p0ihy")
+theme_override_font_sizes/font_size = 10
+text = "Resource "
+
+[node name="Resource_Counter" type="Label" parent="ResourceCountContainer"]
+layout_mode = 2
+theme = ExtResource("24_p0ihy")
+theme_override_font_sizes/font_size = 10
+
+[node name="ScoreContainer" type="HBoxContainer" parent="."]
+offset_left = 38.0
+offset_top = 63.0
+offset_right = 160.0
+offset_bottom = 85.0
+
+[node name="ScoreLB" type="Label" parent="ScoreContainer"]
+layout_mode = 2
+theme = ExtResource("24_p0ihy")
+theme_override_font_sizes/font_size = 10
+text = "Score "
+
+[node name="ScoreLabel" type="Label" parent="ScoreContainer"]
+layout_mode = 2
+theme = ExtResource("24_p0ihy")
+theme_override_font_sizes/font_size = 10
+
+[node name="Sound_Effects" type="Node2D" parent="."]
+
+[node name="StartMusic" type="AudioStreamPlayer2D" parent="Sound_Effects"]
+stream = ExtResource("25_wfjbp")
+autoplay = true
+
+[node name="Button_Pressed" type="AudioStreamPlayer2D" parent="Sound_Effects"]
+stream = ExtResource("26_e8fm8")
+
+[node name="Game_Start" type="AudioStreamPlayer2D" parent="Sound_Effects"]
+stream = ExtResource("27_yym0q")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Button_Container/Shop_Button" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Button_Container/Save_Button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Button_Container/Pause_Button" to="." method="_on_pause_button_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccniuxtc1f7uk"]
+
+[ext_resource type="Script" uid="uid://fjggwocslsvb" path="res://Scripts/Global Auto Load Scripts/Shield_generator.gd" id="1_ck3fc"]
+[ext_resource type="Texture2D" uid="uid://chknsa7bqp3a5" path="res://Used Assets/KennySpace/PNG/Sprites/Station/spaceStation_018.png" id="1_wnwpc"]
+[ext_resource type="PackedScene" uid="uid://cihxh1xjxe42i" path="res://Scenes/Effects/Shields.tscn" id="2_40bb1"]
+[ext_resource type="AudioStream" uid="uid://cjcr0e856bu7h" path="res://Used Assets/Shield_Sound.ogg" id="4_oe35i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck3fc"]
+size = Vector2(127, 61)
+
+[node name="ShieldGenerator" type="Area2D"]
+script = ExtResource("1_ck3fc")
+shield_scene = ExtResource("2_40bb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.69882, 1)
+texture = ExtResource("1_wnwpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_ck3fc")
+
+[node name="Shield_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_oe35i")

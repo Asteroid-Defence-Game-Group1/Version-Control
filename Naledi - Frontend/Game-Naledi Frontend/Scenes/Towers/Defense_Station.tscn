@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cylacoxsitawu"]
+
+[ext_resource type="Texture2D" uid="uid://ivayheaxdxq8" path="res://Used Assets/KennySpace/PNG/Sprites/Station/spaceStation_023.png" id="1_ane01"]
+[ext_resource type="Script" uid="uid://471nawpioc5l" path="res://Scripts/General Scripts/Defense_Station.gd" id="1_g5rdk"]
+[ext_resource type="PackedScene" uid="uid://c2l53iuh05v7n" path="res://Scenes/Ships/FriendlyShip.tscn" id="2_q3tqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5rdk"]
+size = Vector2(150.5, 117)
+
+[node name="Defense_Station" type="Area2D" groups=["Towers"]]
+script = ExtResource("1_g5rdk")
+friendly_ship_scene = ExtResource("2_q3tqp")
+spawn_interval = 6.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 9.53674e-07)
+scale = Vector2(0.744576, 2.51508)
+texture = ExtResource("1_ane01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g5rdk")

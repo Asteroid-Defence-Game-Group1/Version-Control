@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://deb6yrf1kl62b"]
+
+[ext_resource type="Texture2D" uid="uid://bk17uln71suw7" path="res://Used Assets/Missile.png" id="1_efsd1"]
+[ext_resource type="Script" uid="uid://bbhaj5gvg28ye" path="res://Scripts/General Scripts/missile.gd" id="1_h67sb"]
+[ext_resource type="Texture2D" uid="uid://c27a1icmgnq7y" path="res://Used Assets/Assets/PNG/Effects/fire03.png" id="2_h67sb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5q3kh"]
+radius = 25.0
+height = 126.0
+
+[node name="Missile" type="Area2D" groups=["friendly_ships"]]
+script = ExtResource("1_h67sb")
+speed = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -8.75)
+rotation = 1.5708
+scale = Vector2(0.857143, 0.826733)
+texture = ExtResource("1_efsd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5q3kh")
+
+[node name="ThrustFlame" type="Sprite2D" parent="."]
+position = Vector2(-59, -8)
+rotation = 1.5708
+scale = Vector2(1.42857, 1)
+texture = ExtResource("2_h67sb")

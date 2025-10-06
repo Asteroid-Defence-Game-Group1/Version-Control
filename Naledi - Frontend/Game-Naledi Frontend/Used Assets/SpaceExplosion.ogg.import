@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://oenv6ll5a82l"
+path="res://.godot/imported/SpaceExplosion.ogg-93c7fff9829808abae5b0474e1d69d2e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Used Assets/SpaceExplosion.ogg"
+dest_files=["res://.godot/imported/SpaceExplosion.ogg-93c7fff9829808abae5b0474e1d69d2e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

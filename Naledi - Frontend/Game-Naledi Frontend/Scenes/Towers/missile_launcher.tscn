@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://rccgw3k4r2cm"]
+
+[ext_resource type="Script" uid="uid://n05nk3er1cbu" path="res://Scripts/General Scripts/missile_launcher.gd" id="1_rhdxp"]
+[ext_resource type="PackedScene" uid="uid://deb6yrf1kl62b" path="res://Scenes/Projectiles/missile.tscn" id="2_rh73h"]
+[ext_resource type="Texture2D" uid="uid://dkufupxtxkhke" path="res://Used Assets/KennySpace/PNG/Sprites/Ships/spaceShips_007.png" id="3_rh73h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo2ie"]
+size = Vector2(112, 112)
+
+[sub_resource type="Curve" id="Curve_rh73h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.404494), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_oo2ie"]
+offsets = PackedFloat32Array(0, 0.2, 0.44, 1)
+colors = PackedColorArray(0.968627, 0.192157, 0.0980392, 1, 0.972549, 0.27451, 0, 1, 0.976471, 0.643137, 0.0196078, 1, 1, 1, 1, 0)
+
+[node name="Missile_Launcher" type="Area2D" groups=["Towers"]]
+script = ExtResource("1_rhdxp")
+missile_scene = ExtResource("2_rh73h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+rotation = 4.71239
+scale = Vector2(0.637145, 0.709021)
+texture = ExtResource("3_rh73h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_oo2ie")
+
+[node name="Projectile_Point_1" type="Marker2D" parent="."]
+position = Vector2(33, -18)
+
+[node name="Projectile_Point_2" type="Marker2D" parent="."]
+position = Vector2(33, 17)
+
+[node name="Thruster_Flame" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+position = Vector2(-47, -24)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(-980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_rh73h")
+color_ramp = SubResource("Gradient_oo2ie")
+
+[node name="Thruster_Flame" type="CPUParticles2D" parent="Thruster_Flame"]
+texture_repeat = 2
+position = Vector2(1, 47)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(-980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_rh73h")
+color_ramp = SubResource("Gradient_oo2ie")

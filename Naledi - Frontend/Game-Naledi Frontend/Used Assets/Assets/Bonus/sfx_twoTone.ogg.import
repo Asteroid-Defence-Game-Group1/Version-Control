@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://di8h7422hnvro"
+path="res://.godot/imported/sfx_twoTone.ogg-9a48420e869d5802681afee4bb767ece.oggvorbisstr"
+
+[deps]
+
+source_file="res://Used Assets/Assets/Bonus/sfx_twoTone.ogg"
+dest_files=["res://.godot/imported/sfx_twoTone.ogg-9a48420e869d5802681afee4bb767ece.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

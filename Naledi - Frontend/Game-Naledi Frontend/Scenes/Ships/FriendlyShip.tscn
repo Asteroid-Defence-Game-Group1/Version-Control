@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2l53iuh05v7n"]
+
+[ext_resource type="Script" uid="uid://b5njmc24muyn2" path="res://Scripts/General Scripts/FriendlyShip.gd" id="1_lt5lg"]
+[ext_resource type="PackedScene" uid="uid://cxgafh0sswass" path="res://Scenes/Projectiles/laser.tscn" id="2_grrw5"]
+[ext_resource type="Texture2D" uid="uid://4cpy6w5kmpps" path="res://Used Assets/Assets/PNG/playerShip3_orange.png" id="2_nct83"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lt5lg"]
+radius = 68.2642
+
+[sub_resource type="Curve" id="Curve_nct83"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.404494), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_grrw5"]
+offsets = PackedFloat32Array(0, 0.2, 0.44, 1)
+colors = PackedColorArray(0.968627, 0.192157, 0.0980392, 1, 0.972549, 0.27451, 0, 1, 0.976471, 0.643137, 0.0196078, 1, 1, 1, 1, 0)
+
+[node name="Friendly_Ship" type="Area2D" groups=["friendly_ships"]]
+rotation = 1.5708
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_lt5lg")
+laser_scene = ExtResource("2_grrw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1.23469, 1.3)
+texture = ExtResource("2_nct83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 12)
+shape = SubResource("CircleShape2D_lt5lg")
+
+[node name="GunPoint" type="Marker2D" parent="." groups=["Player"]]
+position = Vector2(0, -39)
+
+[node name="Thruster_Flame" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+position = Vector2(-1, 58)
+amount = 500
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 7.0
+gravity = Vector2(-980, 0)
+radial_accel_min = -50.0
+radial_accel_max = -20.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_nct83")
+color_ramp = SubResource("Gradient_grrw5")

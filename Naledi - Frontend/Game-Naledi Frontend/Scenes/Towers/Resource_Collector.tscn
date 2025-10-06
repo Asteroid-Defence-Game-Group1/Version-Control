@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://drrihr51qqkvx"]
+
+[ext_resource type="Texture2D" uid="uid://i4k6g8cfiilt" path="res://Used Assets/KennySpace/PNG/Sprites/Station/spaceStation_021.png" id="1_60r5d"]
+[ext_resource type="Script" uid="uid://c22mnph8q66p4" path="res://Scripts/Global Auto Load Scripts/Resource_Collector.gd" id="1_rq8ow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq8ow"]
+size = Vector2(138, 124)
+
+[node name="Main_Base" type="Area2D" groups=["Towers"]]
+script = ExtResource("1_rq8ow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.709302, 0.388889)
+texture = ExtResource("1_60r5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_rq8ow")

@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://dogqm3tc43mna"]
+
+[ext_resource type="PackedScene" uid="uid://bi5yv5qfdxdbd" path="res://Scenes/Ships/player.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://c0eudx2hb4i1p" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://vqutcv8ewi6l" path="res://Scenes/Asteroids/Asteroid.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://b0ps00gr85wln" path="res://Scenes/Ships/UFO.tscn" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://ct0md31pwm8xe" path="res://Scenes/Game/Hud.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://c2l53iuh05v7n" path="res://Scenes/Ships/FriendlyShip.tscn" id="5_i6g32"]
+[ext_resource type="Texture2D" uid="uid://cmd7vt8huxl6o" path="res://Used Assets/Background.png" id="7_1l0tm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ebmjs"]
+normal = Vector2(0.999993, -0.0037914)
+distance = -138.448
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
+normal = Vector2(-0.999977, 0.0067566)
+distance = -117.963
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wrm1d"]
+normal = Vector2(0, 1.835)
+distance = -84.04
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
+normal = Vector2(0.00934539, -0.999956)
+distance = -314.033
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(2, 0)
+script = ExtResource("1_qxrlw")
+UFO_scene = ExtResource("3_3dryh")
+asteroid_scene = ExtResource("2_wrm1d")
+hud_scene = ExtResource("4_wowpa")
+friendly_scene = ExtResource("5_i6g32")
+
+[node name="Player" parent="." instance=ExtResource("1_ebmjs")]
+position = Vector2(-3, 23)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.45, 0.45)
+
+[node name="WorldCollisions" type="Area2D" parent="."]
+position = Vector2(-5, 20)
+
+[node name="OuterBound_Left" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(-1130, 6)
+shape = SubResource("WorldBoundaryShape2D_ebmjs")
+
+[node name="OuterBound_Right" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(1150, 6)
+shape = SubResource("WorldBoundaryShape2D_qxrlw")
+
+[node name="OuterBound_Top" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(0, -570)
+shape = SubResource("WorldBoundaryShape2D_wrm1d")
+
+[node name="OuterBound_Bottom" type="CollisionShape2D" parent="WorldCollisions" groups=["world_boundary"]]
+position = Vector2(6, 385)
+shape = SubResource("WorldBoundaryShape2D_3dryh")
+
+[node name="Midway_Point" type="CollisionShape2D" parent="WorldCollisions"]
+position = Vector2(400, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_1l0tm")
+
+[node name="AsteroidTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="UFOSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="FriendlySpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1276.0
+offset_top = -728.0
+offset_right = 1277.0
+offset_bottom = 719.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_1l0tm")

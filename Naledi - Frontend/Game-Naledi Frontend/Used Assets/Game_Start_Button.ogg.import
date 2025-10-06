@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvgxu0lgtedl8"
+path="res://.godot/imported/Game_Start_Button.ogg-9acf133d4fc9da2a194e2623b6bb674c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Used Assets/Game_Start_Button.ogg"
+dest_files=["res://.godot/imported/Game_Start_Button.ogg-9acf133d4fc9da2a194e2623b6bb674c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

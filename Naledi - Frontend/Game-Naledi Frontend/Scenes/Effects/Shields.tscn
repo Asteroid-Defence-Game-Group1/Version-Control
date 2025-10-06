@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://cihxh1xjxe42i"]
+
+[ext_resource type="Script" uid="uid://cjh3x8bnfn1p" path="res://Scripts/Global Auto Load Scripts/Shields.gd" id="1_jysdi"]
+[ext_resource type="PackedScene" uid="uid://bc17uicy0ioma" path="res://Scenes/Effects/Expolsion.tscn" id="2_c82rh"]
+[ext_resource type="Texture2D" uid="uid://btev02pvtr3bt" path="res://Used Assets/Shield.png" id="2_e4gyb"]
+[ext_resource type="PackedScene" uid="uid://cf6wbsyi2uje4" path="res://Scenes/Effects/Shield_Recharge.tscn" id="3_pxacu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vv2n"]
+radius = 142.032
+
+[node name="Shield" type="Area2D" groups=["Shields"]]
+script = ExtResource("1_jysdi")
+destruction_scene = ExtResource("2_c82rh")
+recharge_scene = ExtResource("3_pxacu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.495728, 0.445144)
+texture = ExtResource("2_e4gyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5vv2n")

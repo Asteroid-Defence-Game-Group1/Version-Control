@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6uss5c11w8ow"]
+
+[ext_resource type="Texture2D" uid="uid://dc3n2urxlg5kv" path="res://Used Assets/KennySpace/PNG/Sprites/Station/spaceStation_020.png" id="1_coovk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd5o7"]
+size = Vector2(115, 105)
+
+[node name="Upgrade_Station" type="Area2D" groups=["Towers"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.909274, 0.288905)
+texture = ExtResource("1_coovk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_vd5o7")

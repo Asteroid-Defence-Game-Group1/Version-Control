@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://qk4koumtkq17"]
+
+[sub_resource type="GDScript" id="GDScript_4dsm2"]
+script/source = "extends Node2D
+
+@onready var particles = $CPUParticles2D
+
+func _ready():
+
+	particles.emitting = true
+	await get_tree().create_timer(particles.lifetime).timeout
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4dsm2"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_4dsm2"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.00568181, 360), 0.0, 0.0, 0, 0, Vector2(1, -319.551), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Rain" type="Node2D"]
+scale = Vector2(2, 2)
+script = SubResource("GDScript_4dsm2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_4dsm2")
+amount = 200
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(560, 560)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 50.0
+angular_velocity_max = 50.0
+angular_velocity_curve = SubResource("Curve_4dsm2")
+angle_min = 720.0
+angle_max = 720.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(0.848213, 0.929327, 1, 0.596078)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
